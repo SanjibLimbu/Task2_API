@@ -3,7 +3,7 @@ import "package:http/http.dart" as http;
 import 'package:task2/services/http_service.dart';
 
 class PostsService {
-  Future<List<Posts>> getPostsService() async {
+  static Future<List<Posts>> getPostsService() async {
     String url = '${PersistentHttp.baseUrl}posts';
 
     try {
