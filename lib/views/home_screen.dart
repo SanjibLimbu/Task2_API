@@ -48,23 +48,22 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
+                child: Container(
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.grey)),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListTile(
+                        title: Text(
                           post.title ?? '',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                             fontSize: 18,
                             color: Colors.green,
                           ),
                         ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
+                        subtitle: Text(
                           post.body ?? '',
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
@@ -72,18 +71,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontSize: 16,
                           ),
                         ),
-                        IconButton(
+                        trailing: IconButton(
                           onPressed: () {
                             postsData.deletePost(post.id ?? 0);
                           },
                           icon: const Icon(
                             Icons.delete,
                             color: Colors.red,
+                            size: 30,
                           ),
-                        )
-                      ],
-                    ),
-                  ),
+                        ),
+                      )),
                 ),
               ),
             );

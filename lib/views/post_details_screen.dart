@@ -22,12 +22,16 @@ class PostDetailScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              Provider.of<PostsData>(context, listen: false).patchPost(
-                post.id ?? 0,
-                myTitleController.text,
-                myBodyController.text,
-              );
-              Navigator.pop(context);
+              if (myTitleController.text.isNotEmpty &&
+                  myBodyController.text.isNotEmpty) {
+                Provider.of<PostsData>(context, listen: false).patchPost(
+                  post.id ?? 0,
+                  myTitleController.text,
+                  myBodyController.text,
+                );
+
+                Navigator.pop(context);
+              }
             },
             child: const Text(
               'Update',
