@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task2/view_models/posts_data.dart';
+import 'package:task2/views/add_post_screen.dart';
 import 'package:task2/views/home_screen.dart';
 
 void main() {
   runApp(const APITask());
 }
-
 
 class APITask extends StatelessWidget {
   const APITask({super.key});
@@ -14,20 +14,15 @@ class APITask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (BuildContext context)=> PostsData(),
+      create: (BuildContext context) => PostsData(),
       child: MaterialApp(
-    debugShowCheckedModeBanner: false,
-    
-    initialRoute: 'home_screen',
-    routes: {
-    
-      'home_screen':(context) => const HomeScreen(),
-    },
-    
+        debugShowCheckedModeBanner: false,
+        initialRoute: 'home_screen',
+        routes: {
+          'home_screen': (context) => const HomeScreen(),
+          'add_post': (context) => AddPost(),
+        },
       ),
     );
   }
 }
-
-
-
