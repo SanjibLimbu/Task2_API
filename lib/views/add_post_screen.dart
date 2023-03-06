@@ -5,8 +5,8 @@ import 'package:task2/view_models/posts_data.dart';
 class AddPost extends StatelessWidget {
   AddPost({super.key});
 
-  TextEditingController myTitleController = TextEditingController();
-  TextEditingController myBodyController = TextEditingController();
+  final TextEditingController myTitleController = TextEditingController();
+  final TextEditingController myBodyController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -85,10 +85,11 @@ class PostsService {
         "body": body,
       },
     );
+     String url4 = '${PersistentHttp.baseUrl}posts';
 
     try {
       http.Response response = await PersistentHttp.client.post(
-        Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+        Uri.parse(url4),
         body: post,
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
