@@ -1,16 +1,76 @@
-# task2
+# Task2: API integration and state management
 
-A new Flutter project.
+A simple application that can perform get, post, patch and delete operation and save the response data to the state using provider.
+## API Reference
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+#### Get post
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```http
+  GET /https://jsonplaceholder.typicode.com/posts/${id}
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Required**. id of post to fetch |
+
+#### Create post
+
+```http
+  POST /https://jsonplaceholder.typicode.com/posts
+```
+
+#### Patch post
+
+```http
+  PATCH /https://jsonplaceholder.typicode.com/posts/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Required**. id of post to patch |
+
+
+#### Delete post
+
+```http
+  DELETE /https://jsonplaceholder.typicode.com/posts/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Required**. id of post to delete |
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/SanjibLimbu/Task2_API.git
+```
+
+Go to the project directory
+
+```bash
+  cd Task2_API
+  cd Task2
+```
+
+Install dependencies
+
+```bash
+  flutter pub get
+```
+
+Start the app
+
+```bash
+  flutter run
+```
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Authors
+
+- [@Sanjib Limbu](https://www.github.com/SanjibLimbu)
